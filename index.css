@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 196, 215);
+    border: 2px solid black;
+}
+.logo{
+    max-width: 30%;
+}
+.nav-items > ul{
+    display: flex;
+    padding: 15px;
+    margin: 15px;
+    list-style-type: none;
+}
+.nav-items > ul>li{
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+.Search-Box{
+    height: 40px;
+    width: 300px;
+    border:2px solid black;
+}
+.Search-Bar{
+    margin:5px 10px;
+    display: flex;
+}
+.Search-Bar> h2{
+    margin:5px 10px;
+
+}
+.rest-card{
+    /* margin: 0px 5px;
+    padding: 0px 5px; */
+    
+    border:2px solid rgb(0, 0, 0);
+    width: 97%;
+    height:300px;
+    box-shadow: 8px 8px 15px brown;
+    border-radius: 2px;
+
+}
+img{
+    width: 100%;
+}
+
+.Rest-Container{
+    gap: 10px;
+    /* display: flex;  */
+}
+.rest-card:hover{
+    cursor: pointer;
+    color: #ff0000;
+    box-shadow: solid black;
+   
+}
+.abc{
+    display: flex;
+    justify-content: space-between;
+}
