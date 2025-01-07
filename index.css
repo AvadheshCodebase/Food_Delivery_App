@@ -66,6 +66,9 @@ img{
     justify-content: space-between;
 }
 .Body{
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
+}
+.btn{
+    margin: 5px;
 }
