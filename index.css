@@ -72,3 +72,14 @@ img{
 .btn{
     margin: 5px;
 }
+.shimmer-card{
+    margin:20px;
+    width: 280px;
+    height:400px;
+    box-shadow: 8px 8px 15px brown;
+    border-radius: 2px;
+}
+.shimmer-container{
+    display:flex;
+    flex-wrap: wrap;
+}

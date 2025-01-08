@@ -1,11 +1,13 @@
 import resList from "./resList";
 import Restocard from "./Restocard";
 import { useState, useEffect} from "react";
+import Shimmer from "./Shimmer";
 
 
 
 const Body=()=>{
-    let [ListOfResturants, setListOfResturants]=useState(resList);
+    
+    let [ListOfResturants, setListOfResturants]=useState([]);
 
     useEffect(()=>{
          fetchData();
@@ -15,10 +17,14 @@ const Body=()=>{
     const fetchData=  async ()=>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9187318&lng=77.49744160000002&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log(json);
-    }
-    
+        // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info.avgRating);
+         setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    };
+    console.log(ListOfResturants.length);
    
+    if(ListOfResturants.length == 0){
+        return <Shimmer/>;
+    }
      return(
 
         <div className="Body">
@@ -29,7 +35,7 @@ const Body=()=>{
                    
                  );
                  console.log(resFilter)
-                 setListOfResturants(resFilter);
+                setListOfResturants(resFilter);
                 }}
                
                >
@@ -61,3 +67,6 @@ const Body=()=>{
 }
 
 export default Body;
+// key={resData}
+
+// availability.avgRating
