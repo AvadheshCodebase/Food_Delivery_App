@@ -7,12 +7,10 @@ import resList from "./resList";
 const Search=()=>{
     return(
         <div className="Search-Bar">
-            <div className="button">
-                
-
-            </div>
-                <div className="Search-Box">.</div>
-                <h2>Seach Here</h2>
+            <input type="text" className="Search-Box"/>
+            <button className="Search-btn" onClick={()=>{
+              console.log("search button clicked");
+            }}>Search</button>
 
             </div>
     )
