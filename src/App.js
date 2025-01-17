@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom/client";
 import Header from "./Components/Header";
-import Search from "./Components/Search";
 import Body from "./Components/Body";
 import resList from "./Components/resList";
 //import Restocard from "./Components/Restocard";
@@ -12,7 +11,7 @@ const AppLayout = () => {
     return (
         <div className="app">
             <Header />
-            <Search/>
+            {/* <Search/> */}
             <Body/>
            
             
