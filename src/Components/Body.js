@@ -2,7 +2,7 @@ import resList from "./resList";
 import Restocard from "./Restocard";
 import { useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -20,12 +20,14 @@ const Body=()=>{
     },[])
 
     const fetchData=  async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9187318&lng=77.49744160000002&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    //    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9187318&lng=77.49744160000002&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&collection=83649&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+
         const json = await data.json();
         console.log(json);
         // console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info.avgRating);
-         setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-         setfilteredResturant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+       //  setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // setfilteredResturant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         };
     
    
@@ -94,7 +96,7 @@ const Body=()=>{
             <Restocard resData={resList[3]}/>  */}
             
             {filteredResturant.map((res)=>(
-                <Restocard key={res?.info?.id} resData ={res}/>
+               <Link key={res?.info?.id}> <Restocard  resData ={res}/></Link>
             ))}
             
            </div>

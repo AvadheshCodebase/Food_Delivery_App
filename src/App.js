@@ -6,6 +6,7 @@ import Contact from "./Components/Contact";
 import About from "./Components/About";
 import resList from "./Components/resList";
 import Error from "./Components/Error";
+import ResturantMenu from "./Components/ResturantMenu";
 //import Restocard from "./Components/Restocard";
 import { LOGO_URL } from "./utils/constant";
 import { createBrowserRouter , RouterProvider,Outlet} from "react-router-dom";
@@ -40,6 +41,10 @@ const Approuter=createBrowserRouter([
         {
             path:"/Contact",
             element:<Contact />
+        },
+        {
+            path:"/Resturants",
+            element:<ResturantMenu />
         }
     ],
     errorElement:<Error/>
