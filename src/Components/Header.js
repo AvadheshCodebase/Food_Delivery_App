@@ -1,6 +1,8 @@
 import { LOGO_URL } from "../utils/constant";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MENU_URL } from "../utils/constant";
+console.log(MENU_URL);
 
 const Header=()=>{
 

@@ -69,7 +69,7 @@ const Body=()=>{
             //   console.log(ListOfResturants[0]);
               
               const filteredResturant1=ListOfResturants.filter((res)=>{
-                console.log(res.info?.name);
+                console.log(res.info?.id);
                return  res.info?.name.toLowerCase().includes(searchText.toLowerCase());
               }
                 );
@@ -94,9 +94,14 @@ const Body=()=>{
             <Restocard resData ={resList[1]}/>
             <Restocard resData={resList[2]}/> 
             <Restocard resData={resList[3]}/>  */}
-            
+            console.log(res.info?.id);
             {filteredResturant.map((res)=>(
-               <Link key={res?.info?.id}> <Restocard  resData ={res}/></Link>
+               <Link 
+               to={"/Resturants/" + res?.info?.id} 
+               key={res?.info?.id}> 
+               <Restocard  resData ={res}/>
+            
+               </Link>
             ))}
             
            </div>
