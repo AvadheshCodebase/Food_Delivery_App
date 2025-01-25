@@ -3,7 +3,9 @@ import resList from "./resList";
 
 
 const Restocard=(props)=> {
-    const {resData } = props;
+
+    
+    const {resData } = props;  // destusturing the data
     // we have done here optinal chaining
     const {name,avgRatingString,slaString,costForTwo}  =   resData?.info;
 

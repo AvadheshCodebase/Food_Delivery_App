@@ -94,7 +94,7 @@ const Body=()=>{
             <Restocard resData ={resList[1]}/>
             <Restocard resData={resList[2]}/> 
             <Restocard resData={resList[3]}/>  */}
-            console.log(res.info?.id);
+            {/* console.log(res.info?.id); */}
             {filteredResturant.map((res)=>(
                <Link 
                to={"/Resturants/" + res?.info?.id} 
