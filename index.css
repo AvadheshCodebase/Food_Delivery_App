@@ -110,8 +110,14 @@ img{
     flex-wrap: wrap;
 }
 .user-card{
+    width: 50%;
+    height:700px;
+    
     margin:10px;
     border: 3px solid black;
     padding:  0px 0px 0px 15px;
 
+}
+.user-card img{
+    height: 400px;
 }
