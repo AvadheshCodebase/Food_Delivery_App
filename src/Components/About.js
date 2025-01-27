@@ -1,6 +1,7 @@
 import User from "./User";
 import UserClass from "./UserClass";
 import React, { Component } from "react";
+import {lazy} from "react"
 
 
 class About extends Component{
