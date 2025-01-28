@@ -22,9 +22,9 @@ const Header=()=>{
     
     return (
         
-    <div className="header">
+    <div className="flex m-2">
         <div className="logo-container">
-            <img className='logo' src={LOGO_URL} />
+            <img className="size-50" src={LOGO_URL} />
         </div>
         <div className="nav-items">
                 <ul>
