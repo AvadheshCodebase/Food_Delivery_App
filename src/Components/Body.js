@@ -1,5 +1,5 @@
 import resList from "./resList";
-import Restocard from "./Restocard";
+import Restocard,{withpromotedLabel}from "./Restocard";
 import { useState, useEffect} from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ const Body=()=>{
    const[filteredResturant, setfilteredResturant]=useState([]);
     const [searchText, setSearchText] = useState("");
 
+
+    const ResturantWithLabel= withpromotedLabel(Restocard);
     // console.log(ListOfResturants[0]);
 
     useEffect(()=>{
@@ -29,9 +31,10 @@ const Body=()=>{
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info.avgRating);
         setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredResturant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        };
+        console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  
+      };
 
-
+        
          const onlineStatus = useOnlineStatus();
          console.log(onlineStatus);
 
@@ -48,8 +51,8 @@ const Body=()=>{
         ):(
 
         <div className="Body">
-            <div className="filter">
-               <div  className="btn">
+            <div className="flex m-3 p-2">
+               <div  className="m-3 p-2  bg-amber-300 rounded-3xl border-2 to-black">
                 <button onClick={()=>{
                      console.log("button clicked");
                    
@@ -67,21 +70,21 @@ const Body=()=>{
 
                </div>
 
-               <div className="Search-Bar">
+               <div className=" flex ">
 
-              <input type="text" className="Search-Box" 
+              <input type="text" className=" m-3 p-2 border-2 solid to-black h-12 rounded-3xl" 
               value ={searchText}
               onChange={(e)=>{ 
               // console.log(e.target.value)
               setSearchText(e.target.value);
               }}/>
 
-              <button className="Search-btn" onClick={()=>{
+              <button className="m-3 p-2 text-2xl bg-amber-300 rounded-3xl" onClick={()=>{
               console.log("Search triggered with:", searchText);
             //   console.log(ListOfResturants[0]);
               
               const filteredResturant1=ListOfResturants.filter((res)=>{
-                console.log(res.info?.id);
+                console.log(res.info);
                return  res.info?.name.toLowerCase().includes(searchText.toLowerCase());
               }
                 );
@@ -101,21 +104,19 @@ const Body=()=>{
                 
 
             
-           <div className="Rest-Container">
-            {/* <Restocard resData = {resList[0]}/>
-            <Restocard resData ={resList[1]}/>
-            <Restocard resData={resList[2]}/> 
-            <Restocard resData={resList[3]}/>  */}
-            {/* console.log(res.info?.id); */}
-            {filteredResturant.map((res)=>(
+           <div className="flex flex-wrap">
+              {filteredResturant.map((res)=>(
                <Link 
-               to={"/Resturants/" + res?.info?.id} 
-               key={res?.info?.id}> 
-               <Restocard  resData ={res}/>
+                to={"/Resturants/" + res?.info?.id} 
+                key={res?.info?.id}> 
+
+                {console.log(res.info.isOpen)}
+              {res.info.isOpen? (<ResturantWithLabel resData ={res}/>):(
+               <Restocard  resData ={res}/>)}
             
                </Link>
             ))}
-            
+           
            </div>
            
         </div>

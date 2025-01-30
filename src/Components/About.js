@@ -20,9 +20,10 @@ class About extends Component{
         // console.log("parent render called");
 
         return (<div>
-            <p>Article about the page</p>
-            <h2>Details about website</h2>
-    
+          
+            <p className=" p-2">Article about the page</p>
+            <h2 className=" p-2">Details about website</h2>
+       
            {/* <User  name="Avadesh Kumar(functional)"/> */}
            <UserClass name="Avadesh Kumar(Class))" place="Kashi"/>
            
