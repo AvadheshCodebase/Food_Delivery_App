@@ -31,7 +31,7 @@ const Body=()=>{
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info.avgRating);
         setListOfResturants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredResturant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  
+        // console.log(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);  
       };
 
         
@@ -110,7 +110,7 @@ const Body=()=>{
                 to={"/Resturants/" + res?.info?.id} 
                 key={res?.info?.id}> 
 
-                {console.log(res.info.isOpen)}
+
               {res.info.isOpen? (<ResturantWithLabel resData ={res}/>):(
                <Restocard  resData ={res}/>)}
             

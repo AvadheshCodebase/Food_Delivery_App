@@ -19,6 +19,7 @@ const Restocard=(props)=> {
                 <h3>{costForTwo}</h3>
                 
             </div>
+            
     )
 }
 

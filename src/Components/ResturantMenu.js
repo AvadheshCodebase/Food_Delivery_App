@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
 import useResturantMenu from "../utils/useResturantMenu";
 import { useParams } from "react-router-dom";
+import ResturantCategory from "./ResturantCategory";
 
 
 
@@ -33,23 +34,26 @@ export const ResturantMenu = () => {
     return <Shimmer/>
 
      // desturing the data
-     const {carousel}= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card;
-     console.log(carousel);
+     const details= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+     console.log(details);
 
+     const itemCategory= details.filter(item=>item.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
     
+     console.log(itemCategory);
+     
     return(
-    <div>
-        
-        <h1>{resInfo?.cards[2]?.card?.card?.info?.name}</h1>
-         <h2>{resInfo?.cards[2]?.card?.card?.info?.avgRating}</h2> 
-         {/* <p>{resInfo?.cards[2]?.card?.card?.info.costForTwoMessage}</p> */}
-        <ul>
-        {carousel.map(Items=>
-        <li id={Items.dish.info.id}>
-            {Items.dish.info.name}- Rs {(Items.dish.info.price)/100}
-            </li>)}
-               
-        </ul>
+    <div className="text-center">
+       <div className="my-10 w-6/12 items-center m-auto  bg-gray-100 ">
+           <h1 className="font-medium my-4">{resInfo?.cards[0]?.card?.card?.text}</h1>
+           <h2 className="font-medium my-1">Rs-{resInfo?.cards[2]?.card?.card?.info?.costForTwo/100} avg rating is - {resInfo?.cards[2]?.card?.card?.info?.avgRating}</h2>
+        </div>
+        <div>
+           {itemCategory.map(c=>
+             <ResturantCategory data={c?.card?.card}/>)
+            }
+       
+        </div>
+    
 
     </div>
   )
