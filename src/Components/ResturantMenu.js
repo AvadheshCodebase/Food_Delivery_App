@@ -10,6 +10,7 @@ import ResturantCategory from "./ResturantCategory";
 export const ResturantMenu = () => {
 
     // const [ resInfo , setresInfo]= useState(null);
+    const[showIndex,setshowIndex]= useState(null);
 
     const {resId} =useParams();
 
@@ -48,9 +49,16 @@ export const ResturantMenu = () => {
            <h2 className="font-medium my-1">Rs-{resInfo?.cards[2]?.card?.card?.info?.costForTwo/100} avg rating is - {resInfo?.cards[2]?.card?.card?.info?.avgRating}</h2>
         </div>
         <div>
-           {itemCategory.map(c=>
-             <ResturantCategory data={c?.card?.card}/>)
+           {itemCategory.map((c,Index)=>
+             <ResturantCategory key={c?.card?.card.title}
+             data={c?.card?.card}
+             showItem={Index== showIndex ? true:false}
+             setshowIndex={()=>setshowIndex(Index)}  // lifting the state up
+             />)
             }
+
+            
+         
        
         </div>
     
