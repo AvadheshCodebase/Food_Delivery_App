@@ -52,8 +52,8 @@ const Body=()=>{
 
         <div className="Body">
             <div className="flex m-3 p-2">
-               <div  className="m-3 p-2  bg-amber-300 rounded-3xl border-2 to-black">
-                <button onClick={()=>{
+               <div  className="m-3  h-10 w-40 px-2 py-1 bg-orange-500 text-white  rounded-xl shadow-md hover:bg-orange-600">
+                <button  onClick={()=>{
                      console.log("button clicked");
                    
                      const resFilter=ListOfResturants.filter((res)=>res.info?.avgRating>4.5
@@ -72,14 +72,14 @@ const Body=()=>{
 
                <div className=" flex ">
 
-              <input type="text" className=" m-3 p-2 border-2 solid to-black h-12 rounded-3xl" 
+              <input type="text" className=" m-3 p-2 border-2 solid to-black h-10 rounded-3xl" 
               value ={searchText}
               onChange={(e)=>{ 
               // console.log(e.target.value)
               setSearchText(e.target.value);
               }}/>
 
-              <button className="m-3 p-2 text-2xl bg-amber-300 rounded-3xl" onClick={()=>{
+              <button className="m-3 p-2 text-1xlh-8 w-25 bg-orange-500 text-white  rounded-xl shadow-md hover:bg-orange-600 " onClick={()=>{
               console.log("Search triggered with:", searchText);
             //   console.log(ListOfResturants[0]);
               

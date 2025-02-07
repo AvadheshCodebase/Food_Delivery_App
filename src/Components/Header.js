@@ -42,7 +42,7 @@ const Header=()=>{
                         <Link to="/Contact">Contact Us</Link>
                         </li>
                     <li className="flex m-2 p-1">Cart</li>
-                    <button className="flex m-2 px-2 bg-blue-500 h-9 w-15 rounded-2xl border-2" onClick={()=>{
+                    <button className="flex m-2 px-3 py-1 h-8 w-15 bg-orange-500 text-white  rounded-xl shadow-md hover:bg-orange-600" onClick={()=>{
                      buttonName =="login"?setbuttonName("logout"): setbuttonName("login");
 
                     }}>
