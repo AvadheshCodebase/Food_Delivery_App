@@ -5,7 +5,8 @@ const ResturantCategory=({data,showItem,setshowIndex})=>{
     
 
     const handleclick=()=>{
-    //  setshowItems(!showItems);
+    //  setshowItems(!showItems); 
+    
     setshowIndex();
     }
     return(

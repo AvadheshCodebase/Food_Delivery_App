@@ -1,4 +1,5 @@
 import resList from "./resList";
+import { CDN_URL } from "../utils/constant";
 
 
 
@@ -12,7 +13,7 @@ const Restocard=(props)=> {
     return(
         <div className="rest-card m-2 p-1 w-50 h-83 border-2 justify-between hover:bg-sky-400">
                                         
-                <img  className="img h-55 rounded-2xl"src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId}/>
+                <img  className="img h-55 rounded-2xl"src={CDN_URL + resData.info.cloudinaryImageId}/>
                 <h3>{name}</h3>
                 <h3>{avgRatingString}</h3>
                 <h3>{slaString}</h3>

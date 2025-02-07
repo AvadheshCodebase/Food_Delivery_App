@@ -1,4 +1,4 @@
-
+import { CDN_URL } from "../utils/constant";
 
 const ListItems=({props})=>{
     // console.log(props?.itemCards[0]?.card?.info.name);
@@ -13,7 +13,8 @@ const ListItems=({props})=>{
                 <div className="p-2 m-2">
                    <span className="font-bold "> {p.card?.info.name }</span>
                   <div>
-                  <span> Rs-{p.card?.info.price/100} </span>
+                  <span> Rs-{p.card?.info.price/100 || p.card?.info.defaultPrice/100} </span>
+                  <img className="w-20 h-20"src={CDN_URL+ p.card?.info.imageId }/>
                    </div>
                 </div>
 
