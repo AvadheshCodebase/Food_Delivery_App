@@ -19,7 +19,7 @@ const ListItems=({props})=>{
                              <span> Rs-{p.card?.info.price/100 || p.card?.info.defaultPrice/100} </span>
                         </div>
                         <div >
-                          <p>{p.card?.info.description}</p>
+                          <p className="font-10 gilroy-bold">{p.card?.info.description}</p>
                         </div>
                         
                    
