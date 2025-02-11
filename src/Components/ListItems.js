@@ -1,10 +1,25 @@
 import { CDN_URL } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import {addItems} from "../utils/CartSlice";
+
+
+
+
+
 
 const ListItems=({props})=>{
+
+   const dispatch=useDispatch();
+
+   const handleAddItems=()=>{
+
+      dispatch(addItems("Bhindi"));
+   };
     // console.log(props?.itemCards[0]?.card?.info.name);
-
-
+    
     return (<div>
+
+      
          
            {/* <h1>{props?.itemCards[0]?.card?.info.name}</h1> */}
             {props.map((p)=>(
@@ -30,7 +45,7 @@ const ListItems=({props})=>{
                            </div>
                            <div className="relative">
                               <div className="   " > 
-                                 <button className="w-20 absolute bottom-6 right-12 bg-orange-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-orange-600">ADD</button>
+                                 <button onClick={handleAddItems} className="w-20 absolute bottom-6 right-12 bg-orange-500 text-white px-3 py-1 rounded-lg shadow-md hover:bg-orange-600">ADD+</button>
                               </div>
                               <div className="mt-2 text-gray-600">Customisable</div>
                            </div>

@@ -12,6 +12,8 @@ import Shimmer from "./Components/Shimmer";
 import { LOGO_URL } from "./utils/constant";
 import { createBrowserRouter , RouterProvider,Outlet} from "react-router-dom";
 import { lazy,Suspense } from "react";
+import AppStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
 
 
@@ -20,14 +22,14 @@ const About =lazy(()=>import("./Components/About"));
 
 const AppLayout = () => {
     return (
+        <Provider store={AppStore}>
         <div className="app">
             <Header />
             {/* <Search/> */}
-            <Outlet/>
-           
-            
+            <Outlet/>   
             
         </div>
+        </Provider>
     );
 };
 

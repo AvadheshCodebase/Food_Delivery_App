@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MENU_URL } from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 
 const Header=()=>{
@@ -16,9 +17,10 @@ const Header=()=>{
 
       const onlineStatus = useOnlineStatus();
 
-    // if (onlineStatus==false) 
-    //     return
-    //     <h1>opps you went offline</h1>;
+    
+
+    const cartItems=useSelector((store)=>store.cart.items); //subscibing to the store using Selector
+    console.log(cartItems);
     
     return (
         
@@ -41,7 +43,7 @@ const Header=()=>{
                     <li className="flex m-2 p-1">
                         <Link to="/Contact">Contact Us</Link>
                         </li>
-                    <li className="flex m-2 p-1">Cart</li>
+                    <li className="flex m-2 p-1 font-bold">Cart ({cartItems.length} items)</li>
                     <button className="flex m-2 px-3 py-1 h-8 w-15 bg-orange-500 text-white  rounded-xl shadow-md hover:bg-orange-600" onClick={()=>{
                      buttonName =="login"?setbuttonName("logout"): setbuttonName("login");
 
