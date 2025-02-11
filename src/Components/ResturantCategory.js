@@ -14,7 +14,8 @@ const ResturantCategory=({data,showItem,setshowIndex})=>{
           <div className="my-1 w-6/12 m-auto bg-gray-100   shadow-2xl curser cursor-pointer " onClick={handleclick}>
                    <div className="flex justify-between font-bold">
                      {data.title}({data.itemCards.length})
-                       <span className="p-4">🔽</span>
+                       {/* <span className="p-4">🔽</span> */}
+                       <span>{showItem ? "🔼" : "🔽"}</span>
                     </div>
                     <div className=" border-black">
                      {showItem && <ListItems props={data?.itemCards}/>}

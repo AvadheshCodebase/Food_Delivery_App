@@ -52,8 +52,9 @@ export const ResturantMenu = () => {
            {itemCategory.map((c,Index)=>
              <ResturantCategory key={c?.card?.card.title}
              data={c?.card?.card}
-             showItem={Index== showIndex ? true:false}
-             setshowIndex={()=>setshowIndex(Index)}  // lifting the state up
+             showItem={Index== showIndex }
+            //  setshowIndex={()=>setshowIndex(Index)}  // lifting the state up
+             setshowIndex={() => setshowIndex((prevIndex) => (prevIndex === Index ? null : Index))}
              />)
             }
 

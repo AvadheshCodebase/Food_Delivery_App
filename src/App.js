@@ -12,7 +12,7 @@ import Shimmer from "./Components/Shimmer";
 import { LOGO_URL } from "./utils/constant";
 import { createBrowserRouter , RouterProvider,Outlet} from "react-router-dom";
 import { lazy,Suspense } from "react";
-import AppStore from "./utils/appStore";
+import AppStore from "./utils/AppStore";
 import { Provider } from "react-redux";
 
 
