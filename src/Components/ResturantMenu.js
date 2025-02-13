@@ -36,7 +36,7 @@ export const ResturantMenu = () => {
 
      // desturing the data
      const details= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-     console.log(details);
+   //   console.log(details);
 
      const itemCategory= details.filter(item=>item.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
     
@@ -53,8 +53,9 @@ export const ResturantMenu = () => {
              <ResturantCategory key={c?.card?.card.title}
              data={c?.card?.card}
              showItem={Index== showIndex }
-            //  setshowIndex={()=>setshowIndex(Index)}  // lifting the state up
-             setshowIndex={() => setshowIndex((prevIndex) => (prevIndex === Index ? null : Index))}
+             
+              // setshowIndex={()=>setshowIndex(Index)}  // lifting the state up
+              setshowIndex={() => setshowIndex((prevIndex) => (prevIndex === Index ? null : Index))}
              />)
             }
 
