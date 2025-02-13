@@ -43,7 +43,9 @@ const Header=()=>{
                     <li className="flex m-2 p-1">
                         <Link to="/Contact">Contact Us</Link>
                         </li>
-                    <li className="flex m-2 p-1 font-bold">Cart ({cartItems.length} items)</li>
+                    <li className="flex m-2 p-1 font-bold">
+                    <Link to="/Cart">Cart ({cartItems.length} items)</Link>
+                    </li>
                     <button className="flex m-2 px-3 py-1 h-8 w-15 bg-orange-500 text-white  rounded-xl shadow-md hover:bg-orange-600" onClick={()=>{
                      buttonName =="login"?setbuttonName("logout"): setbuttonName("login");
 

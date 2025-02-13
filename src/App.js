@@ -14,6 +14,7 @@ import { createBrowserRouter , RouterProvider,Outlet} from "react-router-dom";
 import { lazy,Suspense } from "react";
 import AppStore from "./utils/AppStore";
 import { Provider } from "react-redux";
+import Cart from "./Components/Cart";
 
 
 
@@ -56,7 +57,12 @@ const Approuter=createBrowserRouter([
         {
             path:"/Resturants/:resId",
             element:<ResturantMenu />
+        },
+        {
+            path:"/Cart",
+            element:<Cart/>
         }
+
     ],
     errorElement:<Error/>
 },
