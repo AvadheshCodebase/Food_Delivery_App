@@ -13,7 +13,7 @@ const Cart=()=>{
 
 
     const cardItems=useSelector((store)=>store.cart.items); // subscribing the redux store
-    console.log(cardItems);
+    // console.log(cardItems);
 
     
     return (
