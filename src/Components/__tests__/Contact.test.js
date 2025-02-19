@@ -9,7 +9,7 @@ test(" check component load or not",()=>{
     expect(heading).toBeInTheDocument(); //assertion provided by jest
 });
 
-test(" check button is present or not",()=>{
+test(" check button component is present or not",()=>{
     render(<Contact/>)
 
     //    const button= screen.getByRole("button");  //Quering
