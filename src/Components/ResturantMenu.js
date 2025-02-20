@@ -27,7 +27,7 @@ export const ResturantMenu = () => {
     //     const json= await data.json();
     //      console.log(json?.data);
     //     console.log(json?.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.carousel[3]?.dish?.info?.name);
-    //     // const path=json?.data;
+    
     //     setresInfo(json?.data);
        
     // }
