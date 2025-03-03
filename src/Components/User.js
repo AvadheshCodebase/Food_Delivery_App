@@ -15,7 +15,7 @@ const User=(props)=>{
      <h1>Name:Avadhesh :{name}</h1>
      <h1>count :{count}</h1>
      <button onClick={()=>{
-      setcount(count6);
+      setcount(count+1);
      }}>click me</button>
      <h1>count2 :{count2}</h1>
      <h1>Place:Varanasi</h1>
