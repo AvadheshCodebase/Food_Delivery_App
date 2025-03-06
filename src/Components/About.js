@@ -2,7 +2,7 @@ import User from "./User";
 import UserClass from "./UserClass";
 import React, { Component } from "react";
 import {lazy} from "react"
-import Counter from "../practice";
+
 
 
 class About extends Component{
